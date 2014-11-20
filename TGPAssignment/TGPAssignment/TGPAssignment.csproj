@@ -34,9 +34,16 @@
     <Reference Include="System.Xml" />
     <Reference Include="System.Core" />
     <Reference Include="Sce.PlayStation.Core" />
+    <Reference Include="Sce.PlayStation.HighLevel.UI" />
+    <Reference Include="Sce.PlayStation.HighLevel.Model" />
+    <Reference Include="Sce.PlayStation.HighLevel.Physics2D" />
+    <Reference Include="Sce.PlayStation.HighLevel.GameEngine2D" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AppMain.cs" />
+    <Compile Include="Player.cs" />
+    <Compile Include="LevelOne.cs" />
+    <Compile Include="Background.cs" />
   </ItemGroup>
   <ItemGroup>
     <ShaderProgram Include="shaders\Simple.fcg" />
@@ -46,4 +53,8 @@
     <PsmMetadata Include="app.xml" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Sce\Sce.Psm.CSharp.targets" />
+  <ItemGroup>
+    <Content Include="player.png" />
+    <Content Include="LevelOne.png" />
+  </ItemGroup>
 </Project>
