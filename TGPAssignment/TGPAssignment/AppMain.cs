@@ -5,6 +5,7 @@ using Sce.PlayStation.Core;
 using Sce.PlayStation.Core.Environment;
 using Sce.PlayStation.Core.Graphics;
 using Sce.PlayStation.Core.Input;
+using Sce.PlayStation.HighLevel.GameEngine2D;
 
 namespace TGPAssignment
 {
@@ -14,35 +15,31 @@ namespace TGPAssignment
 		
 		public static void Main (string[] args)
 		{
+			
 			Initialize ();
 
 			while (true) {
 				SystemEvents.CheckEvents ();
-				Update ();
-				Render ();
+				Director.Instance.Update();
+				Director.Instance.Render();
+				
+				Director.Instance.GL.Context.SwapBuffers(); // Swap between back and front buffer
+				Director.Instance.PostSwap();
 			}
+			Director.Terminate();
 		}
 
 		public static void Initialize ()
 		{
 			// Set up the graphics system
-			graphics = new GraphicsContext ();
+			//graphics = new GraphicsContext ();
+			Director.Initialize();
+			Director.Instance.RunWithScene(new LevelOne());
+			
+			
+			
 		}
 
-		public static void Update ()
-		{
-			// Query gamepad for current state
-			var gamePadData = GamePad.GetData (0);
-		}
-
-		public static void Render ()
-		{
-			// Clear the screen
-			graphics.SetClearColor (0.0f, 0.0f, 0.0f, 0.0f);
-			graphics.Clear ();
-
-			// Present the screen
-			graphics.SwapBuffers ();
-		}
+		
 	}
 }
