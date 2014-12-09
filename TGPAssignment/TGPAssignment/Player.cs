@@ -22,7 +22,7 @@ namespace TGPAssignment
 		public Player ()
 		{
 			alive			= true;
-			textureInfo 	= new TextureInfo("Application/player.png");
+			textureInfo 	= new TextureInfo("Application/textures/sprite-Player-Idle.png");
 			sprite 			= new SpriteUV();
 			sprite			= new SpriteUV(textureInfo);
 			//sprite.Position = new Vector2(50.0f, 50.0f);

@@ -13,6 +13,7 @@ namespace TGPAssignment
 	{
 		private static GraphicsContext graphics;
 		
+		
 		public static void Main (string[] args)
 		{
 			
@@ -30,13 +31,23 @@ namespace TGPAssignment
 		}
 
 		public static void Initialize ()
-		{
+		{	
+			
+			bool LevelOne = true;
+			bool LevelThree = false;
+			
 			// Set up the graphics system
 			//graphics = new GraphicsContext ();
+			
 			Director.Initialize();
+			if(LevelOne == true)
+			{
 			Director.Instance.RunWithScene(new LevelOne());
-			
-			
+			}
+			if(LevelThree == true)
+			{
+			Director.Instance.RunWithScene (new LevelThree());	
+			}
 			
 		}
 

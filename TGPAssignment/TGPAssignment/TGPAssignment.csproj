@@ -42,8 +42,10 @@
   <ItemGroup>
     <Compile Include="AppMain.cs" />
     <Compile Include="Player.cs" />
-    <Compile Include="LevelOne.cs" />
     <Compile Include="Background.cs" />
+    <Compile Include="LevelThree.cs" />
+    <Compile Include="LevelFour.cs" />
+    <Compile Include="LevelTwo.cs" />
   </ItemGroup>
   <ItemGroup>
     <ShaderProgram Include="shaders\Simple.fcg" />
@@ -54,7 +56,12 @@
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Sce\Sce.Psm.CSharp.targets" />
   <ItemGroup>
-    <Content Include="player.png" />
-    <Content Include="LevelOne.png" />
+    <Content Include="textures\Sprite-Player-Idle.png" />
+    <Content Include="textures\Enemy-Suits-Idle.png" />
+    <Content Include="textures\Enemy-Suits-Walk.png" />
+    <Content Include="textures\Sprite-Player-Walk.png" />
+    <Content Include="textures\Level 4.png" />
+    <Content Include="textures\Level 3.png" />
+    <Content Include="textures\Level 2.png" />
   </ItemGroup>
 </Project>
