@@ -1,13 +1,13 @@
 ﻿<Properties>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="TGPAssignment\LevelTwo.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="TGPAssignment\Player.cs">
     <Files>
       <File FileName="TGPAssignment\Background.cs" Line="19" Column="46" />
-      <File FileName="TGPAssignment\LevelTwo.cs" Line="23" Column="15" />
+      <File FileName="TGPAssignment\LevelTwo.cs" Line="21" Column="28" />
       <File FileName="TGPAssignment\LevelThree.cs" Line="23" Column="15" />
       <File FileName="TGPAssignment\LevelFour.cs" Line="18" Column="36" />
-      <File FileName="TGPAssignment\AppMain.cs" Line="49" Column="41" />
-      <File FileName="TGPAssignment\Player.cs" Line="15" Column="42" />
+      <File FileName="TGPAssignment\AppMain.cs" Line="38" Column="27" />
+      <File FileName="TGPAssignment\Player.cs" Line="25" Column="39" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

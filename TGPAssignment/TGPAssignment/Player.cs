@@ -35,8 +35,8 @@ namespace TGPAssignment
 		
 		public void Update()
 		{
-			sprite.Position = new Vector2(-14.0f, -8.0f);
-			//Console.WriteLine(spriteOne.Position);
+			sprite.Position = new Vector2(-14.0f, -0.5f);
+			Console.WriteLine(sprite.Position);
 		}
 		
 		

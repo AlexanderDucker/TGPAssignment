@@ -33,20 +33,25 @@ namespace TGPAssignment
 		public static void Initialize ()
 		{	
 			
-			bool LevelOne = true;
+			bool LevelTwo = true;
 			bool LevelThree = false;
+			bool LevelFour = false;
 			
 			// Set up the graphics system
 			//graphics = new GraphicsContext ();
 			
 			Director.Initialize();
-			if(LevelOne == true)
+			if(LevelTwo == true)
 			{
-			Director.Instance.RunWithScene(new LevelOne());
+			Director.Instance.RunWithScene(new LevelTwo());
 			}
 			if(LevelThree == true)
 			{
 			Director.Instance.RunWithScene (new LevelThree());	
+			}
+			if(LevelFour == true)
+			{
+			Director.Instance.RunWithScene (new LevelFour());	
 			}
 			
 		}
