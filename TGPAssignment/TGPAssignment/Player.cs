@@ -15,9 +15,11 @@ namespace TGPAssignment
 		public			 SpriteUV 	sprite;
 		private static TextureInfo	textureInfo;
 		private static bool 		alive;
-		
+		private float				yVelocity;
+		private float				gravity;
+		private bool				isJumping;
+		private float				yDestination;
 		public bool Alive { get{return alive;} set{alive = value;} }
-
 
 		
 		public Player ()
@@ -27,7 +29,9 @@ namespace TGPAssignment
 			sprite 			= new SpriteUV();
 			sprite			= new SpriteUV(textureInfo);
 			sprite.Position = new Vector2(-14.0f, -8.0f);
-
+			yVelocity		= 0.92f;
+			gravity			= 0.2f;
+			isJumping		= false;
 		}
 		
 		public void Dispose()
@@ -47,9 +51,21 @@ namespace TGPAssignment
 	        {
 	        	sprite.Position = new Vector2(sprite.Position.X - 0.1f, sprite.Position.Y);  
 	        }
+			
+			if((gamePadData.Buttons & GamePadButtons.Cross) != 0)
+			{
+				if(!isJumping)
+				{
+					isJumping = true;
+					yDestination = sprite.Position.Y + 5.0f;
+					while(yDestination > sprite.Position.Y)
+					{	
+						sprite.Position = new Vector2(sprite.Position.X, sprite.Position.Y * yVelocity);
+						isJumping = false;
+					}
+				}						
+			}
 		}
-		
-		
 	}
 }
 
