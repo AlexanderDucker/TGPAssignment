@@ -5,6 +5,7 @@ using Sce.PlayStation.Core.Graphics;
 
 using Sce.PlayStation.HighLevel.GameEngine2D;
 using Sce.PlayStation.HighLevel.GameEngine2D.Base;
+using Sce.PlayStation.Core.Input;
 
 
 namespace TGPAssignment
@@ -25,7 +26,8 @@ namespace TGPAssignment
 			textureInfo 	= new TextureInfo("Application/textures/sprite-Player-Idle.png");
 			sprite 			= new SpriteUV();
 			sprite			= new SpriteUV(textureInfo);
-			//sprite.Position = new Vector2(50.0f, 50.0f);
+			sprite.Position = new Vector2(-14.0f, -8.0f);
+
 		}
 		
 		public void Dispose()
@@ -35,8 +37,16 @@ namespace TGPAssignment
 		
 		public void Update()
 		{
-			sprite.Position = new Vector2(-14.0f, -8.0f);
-			//Console.WriteLine(spriteOne.Position);
+			var gamePadData = GamePad.GetData(0);
+			if((gamePadData.Buttons & GamePadButtons.Right) != 0)
+	        {
+	        	sprite.Position = new Vector2(sprite.Position.X + 0.1f, sprite.Position.Y);  
+	        }
+			
+			if((gamePadData.Buttons & GamePadButtons.Left) != 0)
+	        {
+	        	sprite.Position = new Vector2(sprite.Position.X - 0.1f, sprite.Position.Y);  
+	        }
 		}
 		
 		

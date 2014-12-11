@@ -6,6 +6,8 @@ namespace TGPAssignment
 {
 	public class LevelTwo : Scene
 	{
+		Player p;
+		Background two;
 		
 		public LevelTwo ()
 		{
@@ -19,8 +21,15 @@ namespace TGPAssignment
 			
 			this.AddChild(two.spriteOne);
 			this.AddChild(p.sprite);
+
+			
+		}
+		
+		public override void Update (float dt)
+		{				
 			two.Update();
 			p.Update();
+			base.Update (dt);
 			
 		}
 	}

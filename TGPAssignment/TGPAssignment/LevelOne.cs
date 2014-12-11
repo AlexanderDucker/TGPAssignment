@@ -6,7 +6,8 @@ namespace TGPAssignment
 {
 	public class LevelOne : Scene
 	{
-		
+		Player p;
+		Background one;
 		public LevelOne ()
 		{
 			this.RegisterDisposeOnExitRecursive();
@@ -14,13 +15,20 @@ namespace TGPAssignment
 			
 			
 			
-			Player p = new Player();
-			Background one = new Background();
+			 p = new Player();
+			 one = new Background();
 			
 			this.AddChild(one.spriteOne);
 			this.AddChild(p.sprite);
-			one.Update();
-			p.Update();
+
+			
+		}
+		
+		public override void Update (float dt)
+		{				
+				one.Update();
+				p.Update();
+				base.Update (dt);
 			
 		}
 	}

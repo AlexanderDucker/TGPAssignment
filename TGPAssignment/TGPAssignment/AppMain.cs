@@ -42,11 +42,11 @@ namespace TGPAssignment
 			Director.Initialize();
 			if(LevelOne == true)
 			{
-			Director.Instance.RunWithScene(new LevelOne());
+			Director.Instance.RunWithScene(new LevelOne(),false);
 			}
 			if(LevelThree == true)
 			{
-			Director.Instance.RunWithScene (new LevelThree());	
+			Director.Instance.RunWithScene (new LevelThree(), false);	
 			}
 			
 		}
