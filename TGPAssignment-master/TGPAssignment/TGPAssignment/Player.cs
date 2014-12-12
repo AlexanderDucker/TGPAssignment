@@ -12,18 +12,27 @@ namespace TGPAssignment
 {
 	public class Player
 	{
-		public			 SpriteUV 	sprite;
-		private static TextureInfo	textureInfo;
-		private static bool 		alive;
-		private float				yVelocity;
-		private float				gravity;
-		private bool				isJumping;
-		private float				yDestination;
-		public bool Alive { get{return alive;} set{alive = value;} }
+		public float 		width;
+		public float 		height;
+		public float 		Width			{get{return width;}}
+		public float 		Height			{get{return height;}}
+		public float 		PlayerPosX		{get{return sprite.Position.X;}}
+		public float 		PlayerPosY		{get{return sprite.Position.Y;}}
+		public       		SpriteUV 	sprite;
+		private static  	TextureInfo	textureInfo;
+		private static bool alive;
+		private float		yVelocity;
+		private float		gravity;
+		private bool		isJumping;
+		private float		yDestination;
+		public bool Alive   {get{return alive;} set{alive = value;}}
 
 		
 		public Player ()
 		{
+			Bounds2 b = sprite.Quad.Bounds2 ();
+			width = b.Point10.X;
+			height = b.Point01.Y;
 			alive			= true;
 			textureInfo 	= new TextureInfo("Application/textures/sprite-Player-Idle.png");
 			sprite 			= new SpriteUV();

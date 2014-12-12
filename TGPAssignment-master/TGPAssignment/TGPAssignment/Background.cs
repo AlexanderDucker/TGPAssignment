@@ -11,6 +11,7 @@ namespace TGPAssignment
 {
 	public class Background
 	{
+
 		public			 	SpriteUV 	spriteOne;
 		private static 		TextureInfo	textureInfoOne;
 		public			 	SpriteUV	spriteTwo;

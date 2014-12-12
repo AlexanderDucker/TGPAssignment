@@ -16,8 +16,8 @@ namespace TGPAssignment
 			
 			
 			
-			Player p = new Player();
-			Background two = new Background();
+			p = new Player();
+			two = new Background();
 			
 			this.AddChild(two.spriteOne);
 			this.AddChild(p.sprite);
