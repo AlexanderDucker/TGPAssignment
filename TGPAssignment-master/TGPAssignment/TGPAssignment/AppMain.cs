@@ -34,7 +34,9 @@ namespace TGPAssignment
 		{	
 			
 			bool LevelOne = true;
+			bool LevelTwo = false;
 			bool LevelThree = false;
+			bool LevelFour = false;
 			
 			// Set up the graphics system
 			//graphics = new GraphicsContext ();
@@ -44,9 +46,17 @@ namespace TGPAssignment
 			{
 			Director.Instance.RunWithScene(new LevelOne(),false);
 			}
+			if (LevelTwo == true)
+			{
+			Director.Instance.RunWithScene (new LevelTwo(), false);	
+			}
 			if(LevelThree == true)
 			{
 			Director.Instance.RunWithScene (new LevelThree(), false);	
+			}
+			if(LevelFour == true)
+			{
+			Director.Instance.RunWithScene (new LevelFour(), false);	
 			}
 			
 		}

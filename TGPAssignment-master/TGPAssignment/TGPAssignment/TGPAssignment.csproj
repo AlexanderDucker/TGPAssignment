@@ -64,5 +64,8 @@
     <Content Include="textures\Level 4.png" />
     <Content Include="textures\Level 3.png" />
     <Content Include="textures\Level 2.png" />
+    <Content Include="textures\Level 1.png" />
+    <Content Include="textures\Vehicle Obstacle.png" />
+    <Content Include="textures\Exit-Sprite.png" />
   </ItemGroup>
 </Project>
