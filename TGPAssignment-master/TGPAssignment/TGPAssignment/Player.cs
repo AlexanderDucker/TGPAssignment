@@ -28,7 +28,7 @@ namespace TGPAssignment
 			textureInfo 	= new TextureInfo("Application/textures/sprite-Player-Idle.png");
 			sprite 			= new SpriteUV();
 			sprite			= new SpriteUV(textureInfo);
-			sprite.Position = new Vector2(-14.0f, -8.0f);
+			sprite.Position = new Vector2(-14.0f, -7.0f);
 			yVelocity		= 0.92f;
 			gravity			= 0.2f;
 			isJumping		= false;
@@ -57,11 +57,10 @@ namespace TGPAssignment
 				if(!isJumping)
 				{
 					isJumping = true;
-					yDestination = sprite.Position.Y + 5.0f;
+					yDestination = sprite.Position.Y + 1.5f;
 					while(yDestination > sprite.Position.Y)
 					{	
 						sprite.Position = new Vector2(sprite.Position.X, sprite.Position.Y * yVelocity);
-						isJumping = false;
 					}
 				}						
 			}

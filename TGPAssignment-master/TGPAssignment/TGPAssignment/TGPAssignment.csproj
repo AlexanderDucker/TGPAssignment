@@ -47,6 +47,7 @@
     <Compile Include="LevelFour.cs" />
     <Compile Include="LevelTwo.cs" />
     <Compile Include="LevelOne.cs" />
+    <Compile Include="Obstacle.cs" />
   </ItemGroup>
   <ItemGroup>
     <ShaderProgram Include="shaders\Simple.fcg" />
