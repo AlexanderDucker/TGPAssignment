@@ -1,0 +1,19 @@
+﻿<Properties>
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="TGPAssignment\Player.cs">
+    <Files>
+      <File FileName="TGPAssignment\AppMain.cs" Line="54" Column="5" />
+      <File FileName="TGPAssignment\Player.cs" Line="37" Column="19" />
+      <File FileName="TGPAssignment\LevelOne.cs" Line="40" Column="4" />
+      <File FileName="TGPAssignment\LevelTwo.cs" Line="20" Column="4" />
+      <File FileName="TGPAssignment\LevelThree.cs" Line="28" Column="10" />
+      <File FileName="TGPAssignment\LevelFour.cs" Line="14" Column="28" />
+      <File FileName="TGPAssignment\Obstacle.cs" Line="20" Column="53" />
+      <File FileName="TGPAssignment\Background.cs" Line="75" Column="4" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+</Properties>
