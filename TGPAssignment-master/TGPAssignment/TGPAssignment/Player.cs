@@ -15,10 +15,9 @@ namespace TGPAssignment
 		public			 SpriteUV 	sprite;
 		private static TextureInfo	textureInfo;
 		private static bool 		alive;
-		private float				yVelocity;
+		private Vector2				velocity;
 		private float				gravity;
-		private bool				isJumping;
-		private float				yDestination;
+		private bool				hasJumped;
 		public bool Alive { get{return alive;} set{alive = value;} }
 
 		
@@ -29,9 +28,9 @@ namespace TGPAssignment
 			sprite 			= new SpriteUV();
 			sprite			= new SpriteUV(textureInfo);
 			sprite.Position = new Vector2(-14.0f, -7.0f);
-			yVelocity		= 0.92f;
+			//yVelocity		= 0.92f;
 			gravity			= 0.2f;
-			isJumping		= false;
+			hasJumped		= false;
 		}
 		
 		public void Dispose()
@@ -42,27 +41,37 @@ namespace TGPAssignment
 		public void Update()
 		{
 			var gamePadData = GamePad.GetData(0);
+			
+			sprite.Position += velocity;
+			
 			if((gamePadData.Buttons & GamePadButtons.Right) != 0)
 	        {
-	        	sprite.Position = new Vector2(sprite.Position.X + 0.1f, sprite.Position.Y);  
+	        	velocity.X = 0.1f; 
 	        }
 			
-			if((gamePadData.Buttons & GamePadButtons.Left) != 0)
+			else if((gamePadData.Buttons & GamePadButtons.Left) != 0)
 	        {
-	        	sprite.Position = new Vector2(sprite.Position.X - 0.1f, sprite.Position.Y);  
+	        	velocity.X = -0.1f;
 	        }
 			
-			if((gamePadData.Buttons & GamePadButtons.Cross) != 0)
+			else velocity.X = 0.0f;
+			
+			if((gamePadData.Buttons & GamePadButtons.Cross) != 0 && !hasJumped)
 			{
-				if(!isJumping)
-				{
-					isJumping = true;
-					yDestination = sprite.Position.Y + 1.5f;
-					while(yDestination > sprite.Position.Y)
-					{	
-						sprite.Position = new Vector2(sprite.Position.X, sprite.Position.Y * yVelocity);
-					}
-				}						
+				sprite.Position = new Vector2(sprite.Position.X, sprite.Position.Y + 1.0f);
+				velocity.Y = +0.5f;
+				hasJumped = true;
+			}
+			
+			if(hasJumped)
+			{
+				float i = 1;
+				velocity.Y -= 0.05f * i;
+			}
+			
+			if(!hasJumped)
+			{
+				velocity.Y = 0.0f;
 			}
 		}
 	}
