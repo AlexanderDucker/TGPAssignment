@@ -8,6 +8,8 @@ namespace TGPAssignment
 	{
 		Player p;
 		Background one;
+		Obstacle vehicle;
+		Background exit;
 		public LevelOne ()
 		{
 			this.RegisterDisposeOnExitRecursive();
@@ -15,11 +17,15 @@ namespace TGPAssignment
 			
 			
 			
-			 p = new Player();
-			 one = new Background();
+			p = new Player();
+			one = new Background();
+			vehicle = new Obstacle();
+			exit = new Background();
 			
 			this.AddChild(one.spriteOne);
 			this.AddChild(p.sprite);
+			this.AddChild(vehicle.spriteObstacleOne);
+			this.AddChild(exit.exitSprite);
 
 			
 		}
@@ -28,7 +34,10 @@ namespace TGPAssignment
 		{				
 				one.Update();
 				p.Update();
+				vehicle.Update();
+				exit.Update();
 				base.Update (dt);
+			
 
 			
 		}

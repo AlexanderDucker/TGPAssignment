@@ -11,20 +11,24 @@ namespace TGPAssignment
 {
 	public class Background
 	{
-
+		public float 		ExitSpriteWidth;
+		public float 		ExitSpriteHeight;
+		public float 		ExitWidth				{get{return ExitSpriteWidth;}}
+		public float 		ExitHeight				{get{return ExitSpriteHeight;}}
+		public float 		exitSpritePosX			{get{return exitSprite.Position.X;}}
+		public float 		exitSpritePosY			{get{return exitSprite.Position.Y;}}
 		public			 	SpriteUV 	spriteOne;
-		private static 		TextureInfo	textureInfoOne;
-		public			 	SpriteUV	spriteTwo;
-		private static 		TextureInfo textureInfoTwo;
-		public			 	SpriteUV	spriteThree;
-		private static 		TextureInfo	textureInfoThree;
-		public 			 	SpriteUV 	spriteFour;
-		private static 		TextureInfo textureInfoFour;
-		public 				SpriteUV 	spriteObstacleOne;
-		private static 		TextureInfo textureInfoObstacleOne;
-		public				SpriteUV	exitSprite;
-		private static		TextureInfo textureInfoExitSprite;
-
+		private        		TextureInfo	textureInfoOne;
+		public 	        	SpriteUV	spriteTwo;
+		private        		TextureInfo textureInfoTwo;
+		public 	        	SpriteUV	spriteThree;
+		private        		TextureInfo	textureInfoThree;
+		public         	 	SpriteUV 	spriteFour;
+		private        		TextureInfo textureInfoFour;
+		public 	         	SpriteUV	exitSprite;
+		private        		TextureInfo textureInfoExitSprite;
+		public 				Bounds2 b;
+		
 		
 		public Background()
 		{
@@ -44,15 +48,9 @@ namespace TGPAssignment
 			spriteFour 	 			= new SpriteUV ();	
 			spriteFour 				= new SpriteUV (textureInfoFour);
 			
-			textureInfoObstacleOne  =	new TextureInfo("Application/textures/Vehicle Obstacle.png");
-			spriteObstacleOne		=	new SpriteUV();
-			spriteObstacleOne		= 	new SpriteUV(textureInfoObstacleOne);
-			
-			textureInfoExitSprite 	= new TextureInfo("Application/textures/Exit-Sprite.png");
-			exitSprite		= new SpriteUV();
-			exitSprite		= new SpriteUV(textureInfoExitSprite);
-			
-			
+			textureInfoExitSprite	= new TextureInfo("Application/textures/Exit-Sprite.png");
+			exitSprite				= new SpriteUV();
+			exitSprite				= new SpriteUV(textureInfoExitSprite);
 		}
 		
 		public void Dispose()
@@ -61,16 +59,14 @@ namespace TGPAssignment
 			textureInfoTwo.Dispose();
 			textureInfoThree.Dispose();
 			textureInfoFour.Dispose();
-			textureInfoObstacleOne.Dispose ();
-			textureInfoExitSprite.Dispose ();
 		}
 		
 		public void Update()
 		{
-			exitSprite.Position 	= new Vector2 (-14.0f, -8.0f);
-			
-			spriteObstacleOne.Position  = new Vector2 (-14.0f, -8.0f);
-			
+			Bounds2 b = exitSprite.Quad.Bounds2 ();
+			ExitSpriteWidth = b.Point10.X;
+			ExitSpriteHeight = b.Point01.Y;
+						
 			spriteOne.Position 			= new Vector2(-14.0f, -8.0f);
 			spriteOne.Scale 			= new Vector2(28.5f, 17.0f);
 			
@@ -82,6 +78,8 @@ namespace TGPAssignment
 			
 			spriteFour.Position			= new Vector2 (-14.0f, -8.0f);
 			spriteFour.Scale 			= new Vector2 (28.5f, 17.0f);	
+			
+			exitSprite.Position 		= new Vector2 (8.0f, -7.0f);
 		}
 		
 		
