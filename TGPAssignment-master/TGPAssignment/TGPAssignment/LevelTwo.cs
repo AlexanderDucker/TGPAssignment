@@ -1,6 +1,7 @@
 using System;
 using Sce.PlayStation.HighLevel.GameEngine2D;
 using Sce.PlayStation.HighLevel.GameEngine2D.Base;
+using Sce.PlayStation.Core;
 
 namespace TGPAssignment
 {
@@ -8,16 +9,17 @@ namespace TGPAssignment
 	{
 		Player p;
 		Background two;
+		private Vector2 spawnPoint;
 		
 		public LevelTwo ()
 		{
 			this.RegisterDisposeOnExitRecursive();
 			Scheduler.Instance.ScheduleUpdateForTarget(this, 1, false);
+			spawnPoint = new Vector2(-14.0f, -7.0f);
 			
 			
-			
-			Player p = new Player();
-			Background two = new Background();
+			p = new Player(spawnPoint);
+			two = new Background();
 			
 			this.AddChild(two.spriteOne);
 			this.AddChild(p.sprite);

@@ -21,13 +21,16 @@ namespace TGPAssignment
 		private        		TextureInfo textureInfoFour;
 		public 	         	SpriteUV	exitSprite;
 		private        		TextureInfo textureInfoExitSprite;
+		
+		public Bounds2 bounds;
 
 		
 		public Background()
 		{
-			textureInfoOne 			= new TextureInfo("Application/textures/Level 1.png");
+			textureInfoOne 			= new TextureInfo("Application/textures/Level 4.png");
 			spriteOne 				= new SpriteUV();
 			spriteOne				= new SpriteUV(textureInfoOne);
+
 			
 			textureInfoTwo			= new TextureInfo("Application/textures/Level 2.png");
 			spriteTwo 				= new SpriteUV();
@@ -59,7 +62,7 @@ namespace TGPAssignment
 		
 		public void Update()
 		{
-			exitSprite.Position 	= new Vector2 (13.0f, -4.5f);
+			exitSprite.Position 	= new Vector2 (9.5f, -0.2f);
 						
 			spriteOne.Position 			= new Vector2(-14.0f, -8.0f);
 			spriteOne.Scale 			= new Vector2(28.5f, 17.0f);

@@ -15,22 +15,23 @@ namespace TGPAssignment
 		public			 SpriteUV 	sprite;
 		private static TextureInfo	textureInfo;
 		private static bool 		alive;
-		private Vector2				velocity;
-		private float				gravity;
-		private bool				hasJumped;
+		public Vector2				velocity;
+		public bool					hasJumped;
+		public bool				isOnGround;
+		public Bounds2 bounds;
 		public bool Alive { get{return alive;} set{alive = value;} }
 
 		
-		public Player ()
+		public Player (Vector2 initialPosition)
 		{
 			alive			= true;
 			textureInfo 	= new TextureInfo("Application/textures/sprite-Player-Idle.png");
 			sprite 			= new SpriteUV();
 			sprite			= new SpriteUV(textureInfo);
-			sprite.Position = new Vector2(-14.0f, -7.0f);
-			//yVelocity		= 0.92f;
-			gravity			= 0.2f;
+			//sprite.Position = new Vector2(-14.0f, -7.0f);
+			sprite.Position = initialPosition;
 			hasJumped		= false;
+			isOnGround 		= false;
 		}
 		
 		public void Dispose()
@@ -43,6 +44,22 @@ namespace TGPAssignment
 			var gamePadData = GamePad.GetData(0);
 			
 			sprite.Position += velocity;
+			
+			if(sprite.Position.X < -14.5f)
+				sprite.Position = new Vector2(-14.5f, sprite.Position.Y);
+			if(sprite.Position.X > 13.5f)
+				sprite.Position = new Vector2(13.5f, sprite.Position.Y);
+			if(sprite.Position.Y == -8.0f)
+			{
+				hasJumped = false;
+				isOnGround = true;
+			}
+			if(sprite.Position.Y < -8.0f)
+			{
+				sprite.Position = new Vector2(sprite.Position.X, -8.0f);
+				hasJumped = false;
+			}
+			
 			
 			if((gamePadData.Buttons & GamePadButtons.Right) != 0)
 	        {
@@ -58,15 +75,15 @@ namespace TGPAssignment
 			
 			if((gamePadData.Buttons & GamePadButtons.Cross) != 0 && !hasJumped)
 			{
-				sprite.Position = new Vector2(sprite.Position.X, sprite.Position.Y + 1.0f);
-				velocity.Y = +0.5f;
-				hasJumped = true;
+					sprite.Position = new Vector2(sprite.Position.X, sprite.Position.Y + 1.0f);
+					velocity.Y = +0.5f;
+					isOnGround = false;
+					hasJumped = true;
 			}
 			
 			if(hasJumped)
-			{
-				float i = 1;
-				velocity.Y -= 0.05f * i;
+			{		
+				velocity.Y -= 0.05f;
 			}
 			
 			if(!hasJumped)

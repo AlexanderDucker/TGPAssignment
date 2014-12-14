@@ -48,6 +48,9 @@
     <Compile Include="LevelTwo.cs" />
     <Compile Include="LevelOne.cs" />
     <Compile Include="Obstacle.cs" />
+    <Compile Include="Menu.cs" />
+    <Compile Include="MenuScreen.cs" />
+    <Compile Include="EndScreen.cs" />
   </ItemGroup>
   <ItemGroup>
     <ShaderProgram Include="shaders\Simple.fcg" />
@@ -68,5 +71,8 @@
     <Content Include="textures\Level 1.png" />
     <Content Include="textures\Vehicle Obstacle.png" />
     <Content Include="textures\Exit-Sprite.png" />
+    <Content Include="textures\Tree Platform.png" />
+    <Content Include="textures\End Screen.png" />
+    <Content Include="textures\Start-Screen.png" />
   </ItemGroup>
 </Project>

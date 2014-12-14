@@ -44,20 +44,22 @@ namespace TGPAssignment
 			Director.Initialize();
 			if(LevelOne == true)
 			{
-			Director.Instance.RunWithScene(new LevelOne(),false);
+				Director.Instance.RunWithScene(new Menu(),false);
 			}
-			if (LevelTwo == true)
+			/*if (LevelTwo == true)
 			{
-			Director.Instance.RunWithScene (new LevelTwo(), false);	
+				LevelOne = false;
+				Director.Instance.RunWithScene (new LevelTwo(), false);	
 			}
 			if(LevelThree == true)
 			{
-			Director.Instance.RunWithScene (new LevelThree(), false);	
-			}
-			if(LevelFour == true)
-			{
-			Director.Instance.RunWithScene (new LevelFour(), false);	
-			}
+				LevelTwo = false;
+				Director.Instance.RunWithScene (new LevelThree(), false);	
+			}*/
+			//if(LevelFour == true)
+			//{
+			//Director.Instance.RunWithScene (new LevelFour(), false);	
+			//}
 			
 		}
 

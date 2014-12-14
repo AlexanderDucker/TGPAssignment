@@ -1,14 +1,15 @@
 ﻿<Properties>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="TGPAssignment\Background.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="TGPAssignment\LevelThree.cs">
     <Files>
-      <File FileName="TGPAssignment\AppMain.cs" Line="54" Column="5" />
-      <File FileName="TGPAssignment\Player.cs" Line="19" Column="17" />
-      <File FileName="TGPAssignment\Background.cs" Line="43" Column="39" />
-      <File FileName="TGPAssignment\LevelOne.cs" Line="6" Column="2" />
-      <File FileName="TGPAssignment\LevelTwo.cs" Line="10" Column="17" />
-      <File FileName="TGPAssignment\LevelThree.cs" Line="28" Column="10" />
-      <File FileName="TGPAssignment\LevelFour.cs" Line="10" Column="19" />
+      <File FileName="TGPAssignment\AppMain.cs" Line="47" Column="48" />
+      <File FileName="TGPAssignment\Player.cs" Line="76" Column="1" />
+      <File FileName="TGPAssignment\Background.cs" Line="55" Column="31" />
+      <File FileName="TGPAssignment\LevelOne.cs" Line="46" Column="53" />
+      <File FileName="TGPAssignment\LevelTwo.cs" Line="8" Column="24" />
+      <File FileName="TGPAssignment\LevelThree.cs" Line="12" Column="30" />
+      <File FileName="TGPAssignment\LevelFour.cs" Line="14" Column="35" />
+      <File FileName="TGPAssignment\Obstacle.cs" Line="1" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
